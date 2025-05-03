@@ -3,6 +3,7 @@ import axios from 'axios';
 import dayjs from 'dayjs';
 import SearchSchool from './SearchSchool';
 import OneTeacherInsert from '../component/OneTeacherInsert.tsx';
+import NoteTemplateManager from '../component/NoteTemplateManager';
 
 const today = dayjs().format("YYYY-MM-DD");
 
@@ -185,7 +186,9 @@ export default function QuoteForm() {
           )}
         </div>
       ))}
-
+      <NoteTemplateManager
+          onSelectTemplate={(note) => setForm((prev) => ({ ...prev, note }))}
+      />
       <button onClick={handleSubmit}>저장하기</button>
 
       <OneTeacherInsert
