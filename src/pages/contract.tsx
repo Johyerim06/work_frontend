@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import dayjs from 'dayjs';
 import SearchSchool from './SearchSchool';
+import OneTeacherInsert from '../component/OneTeacherInsert.tsx';
 
 const today = dayjs().format("YYYY-MM-DD");
 
@@ -186,6 +187,13 @@ export default function QuoteForm() {
       ))}
 
       <button onClick={handleSubmit}>저장하기</button>
+
+      <OneTeacherInsert
+          teacher={form.teacher}
+          email={form.email}
+          phone={form.phone}
+      />
+
     </div>
   );
 }
